@@ -9,6 +9,6 @@ class Product extends Controller
     //
     public function index()
     {
-        return "welcome product page";
+        return View('dashboard');
     }
 }

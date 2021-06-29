@@ -1,5 +1,6 @@
 <?php
-
+use app\Http\Controllers\Usercontroller;
+use app\Http\Controllers\Product;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,8 +12,11 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/login', function () {
+    return view('login');
+});
 
-Route::view('/', "login");
+Route::post('/login', 'Usercontroller@login');
+Route::get('/', 'Product@index');
+
+// Route::view('/', "login");

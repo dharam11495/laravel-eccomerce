@@ -13,7 +13,7 @@ class Usercontroller extends Controller
     {
         $user = User::where(['email'=> $req->email])->first();
         if (!$user || !Hash::check($req->password, $user->password)) {
-            echo "Dont match password";
+            echo "password & username dosent match";
         } else {
             $req->session()->put('user',$user);
            return redirect('/');

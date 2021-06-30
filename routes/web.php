@@ -1,6 +1,7 @@
 <?php
 use app\Http\Controllers\Usercontroller;
 use app\Http\Controllers\Product;
+use app\Http\Controllers\EmployeeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +18,9 @@ Route::get('/login', function () {
 });
 
 Route::post('/login', 'Usercontroller@login');
-Route::get('/', 'Product@index');
+// Route::get('/', 'Product@index');
+Route::get('/details/{id}', 'Product@details');
 
 // Route::view('/', "login");
+Route::get('/', 'EmployeeController@showEmployees');
+Route::get('/employee/pdf','EmployeeController@createPDF');
